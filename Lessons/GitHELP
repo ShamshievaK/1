@@ -1,0 +1,13 @@
+git config --global user.name "ShamshievaK"
+git config --global user.email "shamshievak01@gmail.com"
+
+git init: связывает гит с проектом
+git remote add origin https://github.com/ShamshievaK/1.git (ссылка на репозиторий): связывает проект с репозиторием
+# все выше команды прописываются 1 раз, все что ниже постоянно
+
+git add . : ДОБАВЛЯЕТ ФАЙЛЫ
+git commit -m 'название lesson 1': точка сохранения. если выкинет то вернет к этому моменту
+git push origin main\master
+
+git config --global user.name "shamshievak"
+git config --global user.email "shamshievak01@gmail.com"
