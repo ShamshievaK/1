@@ -16,14 +16,14 @@ import art
 # print(colorama.Back.BLUE, colorama.Fore.BLACK)
 # print('Hello World')
 import art
-# from art import tprint
-#
-# tprint('Hello World!')
+from art import tprint
+
+tprint('Hello World!')
 # или
-import art
-art.tprint('Hello World!')
-
-
-
-
-Новый проект, новый репозиторий
+# import art
+# art.tprint('Hello World!')
+#
+#
+#
+#
+# Новый проект, новый репозиторий

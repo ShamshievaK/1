@@ -1,5 +1,8 @@
 import random
+import colorama
+from art import tprint
 
+# tprint("Давай играть в Виселицу")
 
 def choose_word():
     words = ['python', 'hangman', 'challenge', 'programming', 'algorithm']
@@ -83,7 +86,7 @@ def play_game():
     guessed_words = []
     tries = 6
 
-    print("Давайте играть в Виселицу!")
+    tprint("Let's play hangman!", font="random")
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
@@ -92,13 +95,13 @@ def play_game():
         guess = input("Введите букву или слово целиком: ").lower()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print(f"Вы уже угадывали букву {guess}.")
+                print(colorama.Fore.BLUE, f"Вы уже угадывали букву {guess}.")
             elif guess not in word:
-                print(f"Буквы {guess} нет в слове.")
+                print(colorama.Fore.RED, f"Буквы {guess} нет в слове.")
                 tries -= 1
                 guessed_letters.append(guess)
             else:
-                print(f"Отлично! Буква {guess} есть в слове!")
+                print(colorama.Fore.GREEN, f"Отлично! Буква {guess} есть в слове!")
                 guessed_letters.append(guess)
                 word_as_list = list(word_completion)
                 indices = [i for i, letter in enumerate(word) if letter == guess]
@@ -109,9 +112,9 @@ def play_game():
                     guessed = True
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
-                print(f"Вы уже угадывали слово {guess}.")
+                print(colorama.Fore.BLUE, f"Вы уже угадывали слово {guess}.")
             elif guess != word:
-                print(f"Слово {guess} не верно.")
+                print(colorama.Fore.RED, f"Слово {guess} не верно.")
                 tries -= 1
                 guessed_words.append(guess)
             else:
@@ -124,11 +127,19 @@ def play_game():
         print(word_completion)
         print("\n")
 
+
+    # if guessed:
+    #     print(colorama.Fore.GREEN, f"Поздравляем! Вы угадали слово {word}!")
+    # else:
+    #     print(f"Вы не угадали слово. Загаданное слово было {word}. Возможно, повезет в следующий раз!")
     if guessed:
-        print(f"Поздравляем! Вы угадали слово {word}!")
+        tprint("You win!", font="random")
     else:
-        print(f"Вы не угадали слово. Загаданное слово было {word}. Возможно, повезет в следующий раз!")
+        tprint("Game over!", font="random")
+
+
 
 
 if __name__ == "__main__":
     play_game()
+
