@@ -29,6 +29,70 @@ print(f'Длина кооронной фразы: {hero.catch_phrase_length()}')
 
 
 
+class SuperHero:
+    def __init__(self, damage, fly, healthpoints):
+        self.damage = damage
+        self.flip = fly
+        self.health = healthpoints
+
+    def increase_health(self, health_points):
+        return health_points **2
+
+class SuperHero2(SuperHero):
+    def __init__(self, damage, fly, healthpoints):
+        super().__init__(damage, fly, healthpoints)
+
+        self.fight = "air"
+
+    def increase_health(self, health_points):
+        return health_points **2
+    def new_m(self):
+        print("True in the True_phrase")
+
+class SuperHero3(SuperHero):
+    def __init__(self, damage, fly, healthpoints):
+        super().__init__(damage, fly, healthpoints)
+        self.fight = "earth"
+
+    def increase_health(self, health_points):
+        return health_points ** 2
+
+    def new_m(self):
+        print("True in the True_phrase")
+
+class Villian(SuperHero2):
+    def __init__(self, damage, fly, healthpoints):
+        super().__init__(damage, fly, healthpoints)
+        self.people = "monster"
+
+    def gen_x(self):
+        pass
+
+    def crit(self, bad):
+        return bad.damage ** 2
+
+spiderman = SuperHero2(100, True, 0)
+blackwidow = SuperHero3(80, False, 20)
+villian = Villian(150, True, 0)
+
+
+
+spiderman.new_m()
+print(spiderman.increase_health(50))
+villian.crit(blackwidow)
+print(blackwidow.damage)
+
+
+
+
+
+
+
+
+    # def new_m(self):
+    #     print("True in the True_phrase")
+
+
 
 
 
