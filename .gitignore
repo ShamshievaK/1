@@ -4,7 +4,8 @@
 HOMEWORK\
 HW1.py
 
-Lessons\__pycache__
+Lessons/__pycache__/
 GitHelp
 PIP
-
+env
+reg.txt
